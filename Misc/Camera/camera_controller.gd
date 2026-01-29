@@ -31,7 +31,6 @@ extends Node3D
 @export var rotate_smooth: float = 0.15
 @export var zoom_smooth: float = 0.1
 
-
 # --- INTERNAL STATE ---
 
 var target_pan: float = 0.0
@@ -45,14 +44,18 @@ var last_pos: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	target_zoom = mainCamera.position.z
 
+
 func _unhandled_input(event: InputEvent) -> void:
+
+	_handle_click(event)
+
 	if is_locked:
 		dragging = false
 		return
 
 	_handle_camera_motion_input(event)
 
-	
+
 func _handle_camera_motion_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		var mb: InputEventMouseButton = event
@@ -66,23 +69,49 @@ func _handle_camera_motion_input(event: InputEvent) -> void:
 			elif mb.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				target_zoom = clamp(target_zoom + zoom_speed, min_zoom, max_zoom)
 
-
 	elif event is InputEventMouseMotion and dragging:
 		var mm: InputEventMouseMotion = event
 		_handle_drag(mm.relative)
 
-	# elif event is InputEventScreenTouch:
-	# 	var st: InputEventScreenTouch = event
-	# 	dragging = st.pressed
-	# 	last_pos = st.position
-
-	# elif event is InputEventScreenDrag:
-	# 	var sd: InputEventScreenDrag = event
-	# 	_handle_drag(sd.relative)
-
 	elif can_zoom and event is InputEventMagnifyGesture:
 		var mg: InputEventMagnifyGesture = event
 		target_zoom = clamp(target_zoom - mg.factor * zoom_speed, min_zoom, max_zoom)
+
+
+func _raycast_from_camera(mouse_pos :  Vector2, max_distance: float = 1000.0, collision_mask: int = 0xFFFFFFFF) -> Dictionary:
+
+	var ray_origin: Vector3 = mainCamera.project_ray_origin(mouse_pos)
+	var ray_dir: Vector3 = mainCamera.project_ray_normal(mouse_pos)
+	var ray_end: Vector3 = ray_origin + ray_dir * max_distance
+
+	var space: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
+	query.collision_mask = collision_mask
+	query.collide_with_bodies = true
+	query.collide_with_areas = true
+
+	var result: Dictionary = space.intersect_ray(query)
+	return result
+
+
+func _handle_click(event: InputEvent) -> void:
+	if not (event is InputEventMouseButton):
+		return
+
+	var mb: InputEventMouseButton = event
+
+	if not mb.pressed:
+		return
+
+	if mb.button_index != MOUSE_BUTTON_LEFT and mb.button_index != MOUSE_BUTTON_RIGHT:
+		return
+
+	var hit: Dictionary = _raycast_from_camera(mb.position)
+	if hit.is_empty():
+		return
+
+	SignalManeger.mouse_interact.emit(hit, mb.button_index)
 
 
 
