@@ -1,89 +1,25 @@
-# Subject to Change for now
+# Factory Stack – GDD Core (Flexible Draft)
 
-## Title Wip
+**Concept:**
+Build a vertical tower by stacking modular units. Resources move upward through the tower. Optimize placement to increase output. Reset the tower to gain permanent progression bonuses.
 
-**Scrap Stack**
+**Core Loop (Placeholder):**
 
----
+1. Place units to produce resources.
+2. Move resources through the tower.
+3. Convert resources into higher-tier resources or currency.
+4. Use currency to expand the tower.
+5. Reset for permanent bonuses.
 
-## Genre
+**Core Systems (Flexible):**
 
-Incremental, factory builder, idle.
+- **Tower Units:** Different types with specific functions (TBD).
+- **Resources:** Flow upward through the tower (TBD).
+- **Tower Grid:** Vertical stacking system with snap-to-grid.
+- **Flow/Connection System:** Units require proper input connections to function.
+- **Persistence:** Save/load tower state.
 
----
+**Prototype Focus:**
 
-## Platform
-
-Mobile, landscape, 3D.
-
----
-
-## Core Fantasy
-
-You are stacking junk machines into a growing tower that turns trash into money.
-
----
-
-## Core Loop
-
-1. Generate Power.
-2. Use Power to process Scrap.
-3. Turn Scrap into Cash.
-4. Spend Cash to place more blocks.
-5. Tower grows upward.
-6. Reset for permanent boosts.
-
----
-
-## Resources
-
-- **Power**: produced by generators.
-- **Scrap**: made by processors using power.
-- **Cash**: made by assemblers from scrap.
-- **Blueprints**: earned by resetting the tower.
-
----
-
-## Block Types
-
-**Generator**
-Produces Power per second.
-
-**Conveyor**
-Moves Power and Scrap upward.
-
-**Processor**
-Uses Power to convert Scrap Ore into Scrap.
-
-**Assembler**
-Uses Scrap to generate Cash.
-
----
-
-## Controls
-
-- Tap empty grid to place block.
-- Tap block to boost it temporarily.
-- Long press to move or delete.
-
----
-
-## Progression
-
-Blocks unlock in tiers as the tower gets taller.
-Higher levels unlock faster, more complex machines.
-
----
-
-## Prestige
-
-Scrap the tower.
-Earn Blueprints based on total Cash produced.
-Blueprints give permanent multipliers.
-
----
-
-## Win Condition
-
-There is none.
-The goal is to build the tallest, most efficient junk tower possible.
+- Mechanics first: stacking, resource flow, connections.
+- Test basic optimization and reset/progression loop early.
