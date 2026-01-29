@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bj3hn32e5lr2d"]
+
+[ext_resource type="PackedScene" uid="uid://6ffyfeuev41v" path="res://Misc/Camera/camera_controller.tscn" id="1_syuel"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_yr2l0"]
+
+[node name="test" type="Node3D" unique_id=1149646514]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1263143368]
+mesh = SubResource("PrismMesh_yr2l0")
+
+[node name="CameraController" parent="." unique_id=1929181841 instance=ExtResource("1_syuel")]

@@ -1,65 +1,71 @@
 {
-	"title": "TaskBoard",
-	"cols": [
-		{
-			"title": "To-Do",
-			"tasks": [
-				{
-					"text": "🔴 Implement camera system\n- Pan\n- Zoom\n- Rotation\n",
-					"id": "cco5xymwtw0qgqbyrtbzhz67"
-				},
-				{
-					"text": "🔴 Implement vertical 3D grid \n- snapping\n- unit placement \n- unit removal",
-					"id": "c4z1bnqtq9lwvm2njcxymtte"
-				},
-				{
-					"text": "🔴 Implement basic resource flow\n- Create placeholder generator unit\n- Create placeholder processor unit\n- Create placeholder assembler unit\n- Ensure units only function if inputs are connected",
-					"id": "y41c4m9ole7ih62zisan2x47"
-				},
-				{
-					"text": "🟠 Implement save/load system for tower state\n",
-					"id": "fhj9xjpcub3xehhan26emmc2"
-				},
-				{
-					"text": "🟠 Implement resource conversion ",
-					"id": "ugnvmk8xj3spc7tivxyiw2wv"
-				},
-				{
-					"text": "🟠 Add UI\n- resource counters UI\n- unit selection UI\n- basic notifications UI",
-					"id": "mko4rllhmshmp82arz23cius"
-				},
-				{
-					"text": "🟡 Implement debug tool:\n- highlight connected/disconnected units\n- resource flow visualization",
-					"id": "h8gmo2za6781jxr8oaq5t2do"
-				},
-				{
-					"text": "🔵 Custom dev tool\n- Add or remove item / units",
-					"id": "ro6z9ufot43y8zgfw6jg8ikh"
-				}
-			],
-			"id": "scly0alkxlv7x6it0vrcj5zu",
-			"color": "#fcb900"
-		},
-		{
-			"title": "Doing",
-			"tasks": [],
-			"id": "hz5qsjfrhchp3yeu12a8yqvb",
-			"color": "#7bdcb5"
-		},
-		{
-			"title": "Done",
-			"tasks": [],
-			"id": "l4sq3rmqzvz0lpro7uwscv0k",
-			"color": "#00d084"
-		},
-		{
-			"title": "Trash",
-			"tasks": [],
-			"id": "rtj3u9f02axpq26z0tkdlji9",
-			"color": "#eb144c"
-		}
-	],
-	"autosave": true,
-	"saveToFile": true,
-	"timestamp": 1769682610075
+    "title": "TaskBoard",
+    "cols": [
+        {
+            "title": "To-Do",
+            "tasks": [
+                {
+                    "text": "🔴 Implement basic resource flow\n- Create placeholder generator unit\n- Create placeholder processor unit\n- Create placeholder assembler unit\n- Ensure units only function if inputs are connected",
+                    "id": "y41c4m9ole7ih62zisan2x47"
+                },
+                {
+                    "text": "🟠 Implement save/load system for tower state\n",
+                    "id": "fhj9xjpcub3xehhan26emmc2"
+                },
+                {
+                    "text": "🟠 Implement resource conversion ",
+                    "id": "ugnvmk8xj3spc7tivxyiw2wv"
+                },
+                {
+                    "text": "🟠 Add UI\n- resource counters UI\n- unit selection UI\n- basic notifications UI",
+                    "id": "mko4rllhmshmp82arz23cius"
+                },
+                {
+                    "text": "🟡 Camera easing curve for motion",
+                    "id": "maryltrmyo7eyex8cmzybzt9"
+                },
+                {
+                    "text": "🟡 Implement debug tool:\n- highlight connected/disconnected units\n- resource flow visualization",
+                    "id": "h8gmo2za6781jxr8oaq5t2do"
+                },
+                {
+                    "text": "🔵 Custom dev tool\n- Add or remove item / units",
+                    "id": "ro6z9ufot43y8zgfw6jg8ikh"
+                }
+            ],
+            "id": "scly0alkxlv7x6it0vrcj5zu",
+            "color": "#fcb900"
+        },
+        {
+            "title": "Doing",
+            "tasks": [
+                {
+                    "text": "🔴 Implement vertical 3D grid \n- snapping\n- unit placement \n- unit removal",
+                    "id": "c4z1bnqtq9lwvm2njcxymtte"
+                }
+            ],
+            "id": "hz5qsjfrhchp3yeu12a8yqvb",
+            "color": "#7bdcb5"
+        },
+        {
+            "title": "Done",
+            "tasks": [
+                {
+                    "text": "🔴 Implement camera system\n- ~~Pan~~\n- ~~Zoom~~\n- ~~Rotation~~\n",
+                    "id": "cco5xymwtw0qgqbyrtbzhz67"
+                }
+            ],
+            "id": "l4sq3rmqzvz0lpro7uwscv0k",
+            "color": "#00d084"
+        },
+        {
+            "title": "Trash",
+            "tasks": [],
+            "id": "rtj3u9f02axpq26z0tkdlji9",
+            "color": "#eb144c"
+        }
+    ],
+    "autosave": true,
+    "saveToFile": true,
+    "timestamp": 1769689667917
 }
