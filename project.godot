@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="factorio-stack"
+run/main_scene="uid://bj3hn32e5lr2d"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManeger="*uid://dpjcqnj6qp5v8"
+
+[input_devices]
+
+pointing/android/enable_long_press_as_right_click=true
+pointing/android/enable_pan_and_scale_gestures=true
 
 [physics]
 
@@ -27,3 +33,4 @@ GameManeger="*uid://dpjcqnj6qp5v8"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

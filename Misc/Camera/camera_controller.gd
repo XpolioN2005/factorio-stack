@@ -71,14 +71,14 @@ func _handle_camera_motion_input(event: InputEvent) -> void:
 		var mm: InputEventMouseMotion = event
 		_handle_drag(mm.relative)
 
-	elif event is InputEventScreenTouch:
-		var st: InputEventScreenTouch = event
-		dragging = st.pressed
-		last_pos = st.position
+	# elif event is InputEventScreenTouch:
+	# 	var st: InputEventScreenTouch = event
+	# 	dragging = st.pressed
+	# 	last_pos = st.position
 
-	elif event is InputEventScreenDrag:
-		var sd: InputEventScreenDrag = event
-		_handle_drag(sd.relative)
+	# elif event is InputEventScreenDrag:
+	# 	var sd: InputEventScreenDrag = event
+	# 	_handle_drag(sd.relative)
 
 	elif can_zoom and event is InputEventMagnifyGesture:
 		var mg: InputEventMagnifyGesture = event
