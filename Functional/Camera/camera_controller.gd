@@ -23,6 +23,8 @@ extends Node3D
 @export_category("Limits")
 @export var min_pan_y: float = 0.0
 @export var max_pan_y: float = 5.0
+@export var min_pitch: float = -1.2
+@export var max_pitch: float = -0.2
 @export var min_zoom: float = 2.0
 @export var max_zoom: float = 15.0
 
@@ -36,6 +38,7 @@ extends Node3D
 var camera_mode: GameManeger.CameraMode = GameManeger.CameraMode.MOVE_XZ
 
 var target_pos: Vector3
+var target_rot_x: float
 var target_rot_y: float
 var target_zoom: float
 
@@ -49,6 +52,7 @@ const DRAG_THRESHOLD: float = 10.0
 
 func _ready() -> void:
 	target_pos = anchore.position
+	target_rot_x = anchore.rotation.x
 	target_rot_y = anchore.rotation.y
 	target_zoom = mainCamera.position.z
 
@@ -63,7 +67,19 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	if event is InputEventMouseButton:
-		_handle_button(event as InputEventMouseButton)
+		var mb := event as InputEventMouseButton
+
+		# Mouse wheel zoom
+		if can_zoom and mb.pressed:
+			if mb.button_index == MOUSE_BUTTON_WHEEL_UP:
+				target_zoom = clamp(target_zoom - zoom_speed, min_zoom, max_zoom)
+				return
+			elif mb.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				target_zoom = clamp(target_zoom + zoom_speed, min_zoom, max_zoom)
+				return
+
+		_handle_button(mb)
+
 
 	elif event is InputEventMouseMotion:
 		_handle_motion(event as InputEventMouseMotion)
@@ -132,6 +148,9 @@ func _apply_camera_drag(delta: Vector2) -> void:
 				return
 
 			target_rot_y -= delta.x * rotate_speed
+			target_rot_x -= delta.y * rotate_speed
+			target_rot_x = clamp(target_rot_x, min_pitch, max_pitch)
+
 
 # -------- RAYCAST --------
 
@@ -153,11 +172,9 @@ func _raycast_from_camera(mouse_pos: Vector2, max_distance: float = 1000.0, coll
 func _process(_delta: float) -> void:
 	anchore.position = anchore.position.lerp(target_pos, pan_smooth)
 
-	anchore.rotation.y = lerp_angle(
-		anchore.rotation.y,
-		target_rot_y,
-		rotate_smooth
-	)
+	anchore.rotation.x = lerp(anchore.rotation.x, target_rot_x, rotate_smooth)
+	anchore.rotation.y = lerp_angle(anchore.rotation.y, target_rot_y, rotate_smooth)
+
 
 	target_zoom = clamp(target_zoom, min_zoom, max_zoom)
 	mainCamera.position.z = lerp(mainCamera.position.z, target_zoom, zoom_smooth)

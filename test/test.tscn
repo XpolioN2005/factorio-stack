@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bj3hn32e5lr2d"]
 
 [ext_resource type="PackedScene" uid="uid://6ffyfeuev41v" path="res://Functional/Camera/camera_controller.tscn" id="1_syuel"]
-[ext_resource type="PackedScene" uid="uid://dcmo8e5tlqlx" path="res://Functional/Grid/base_grid.tscn" id="2_8a8pi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a8pi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,12 +14,12 @@ background_mode = 2
 sky = SubResource("Sky_65205")
 tonemap_mode = 2
 
+[sub_resource type="BoxMesh" id="BoxMesh_syuel"]
+
 [node name="test" type="Node3D" unique_id=1149646514]
 
 [node name="CameraController" parent="." unique_id=1929181841 instance=ExtResource("1_syuel")]
-
-[node name="BaseGrid" parent="." unique_id=65609805 instance=ExtResource("2_8a8pi")]
-height = 0
+camera_mode = 2
 
 [node name="env" type="Node3D" parent="." unique_id=1194187143]
 
@@ -30,3 +29,6 @@ environment = SubResource("Environment_hrq6i")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="env" unique_id=952943777]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1927610564]
+mesh = SubResource("BoxMesh_syuel")
