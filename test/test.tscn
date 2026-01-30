@@ -19,7 +19,6 @@ tonemap_mode = 2
 [node name="test" type="Node3D" unique_id=1149646514]
 
 [node name="CameraController" parent="." unique_id=1929181841 instance=ExtResource("1_syuel")]
-camera_mode = 2
 
 [node name="env" type="Node3D" parent="." unique_id=1194187143]
 
