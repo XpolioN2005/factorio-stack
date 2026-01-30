@@ -51,7 +51,7 @@
             "title": "Done",
             "tasks": [
                 {
-                    "text": "🔴 Implement camera system\n- ~~Pan~~\n- ~~Zoom~~\n- ~~Rotation~~\n",
+                    "text": "🔴 Implement camera system\n- ~~Imporvement (statemechine)~~\n- ~~Pan~~\n- ~~Zoom~~\n- ~~Rotation~~\n",
                     "id": "cco5xymwtw0qgqbyrtbzhz67"
                 }
             ],
@@ -67,5 +67,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1769692279120
+    "timestamp": 1769755107205
 }
