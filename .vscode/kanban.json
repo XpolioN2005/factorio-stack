@@ -9,10 +9,6 @@
                     "id": "y41c4m9ole7ih62zisan2x47"
                 },
                 {
-                    "text": "🟠 Game play state\n - Edit mode\n - Simulate mode\n ",
-                    "id": "l6he4coisjau5iy9163umt95"
-                },
-                {
                     "text": "🟠 Implement save/load system for tower state\n",
                     "id": "fhj9xjpcub3xehhan26emmc2"
                 },
@@ -44,8 +40,8 @@
             "title": "Doing",
             "tasks": [
                 {
-                    "text": "🔴 Implement vertical 3D grid  \n(more like voxel with var size )\n- ~~snapping~~\n- ~~unit placement~~\n- unit removal",
-                    "id": "c4z1bnqtq9lwvm2njcxymtte"
+                    "text": "🟠 Game play state\n - Edit mode\n - Simulate mode\n ",
+                    "id": "l6he4coisjau5iy9163umt95"
                 }
             ],
             "id": "hz5qsjfrhchp3yeu12a8yqvb",
@@ -57,6 +53,10 @@
                 {
                     "text": "🔴 Implement camera system\n- ~~Imporvement (statemechine)~~\n- ~~Pan~~\n- ~~Zoom~~\n- ~~Rotation~~\n",
                     "id": "cco5xymwtw0qgqbyrtbzhz67"
+                },
+                {
+                    "text": "🔴 Implement vertical 3D grid  \n(more like voxel with var size )\n- ~~snapping~~\n- ~~unit placement~~\n- ~~unit removal~~",
+                    "id": "c4z1bnqtq9lwvm2njcxymtte"
                 }
             ],
             "id": "l4sq3rmqzvz0lpro7uwscv0k",
@@ -71,5 +71,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1769874617567
+    "timestamp": 1769882545601
 }
