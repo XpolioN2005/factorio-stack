@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bj3hn32e5lr2d"]
 
 [ext_resource type="PackedScene" uid="uid://6ffyfeuev41v" path="res://Functional/Camera/camera_controller.tscn" id="1_syuel"]
+[ext_resource type="PackedScene" uid="uid://bqga4f1bxs35" path="res://test/test_block.tscn" id="2_8a8pi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a8pi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -13,10 +14,6 @@ sky_material = SubResource("ProceduralSkyMaterial_8a8pi")
 background_mode = 2
 sky = SubResource("Sky_65205")
 tonemap_mode = 2
-
-[sub_resource type="BoxMesh" id="BoxMesh_syuel"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_syuel"]
 
 [node name="test" type="Node3D" unique_id=1149646514]
 
@@ -31,10 +28,4 @@ environment = SubResource("Environment_hrq6i")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1389622587]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1927610564]
-mesh = SubResource("BoxMesh_syuel")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=494287509]
-shape = SubResource("BoxShape3D_syuel")
+[node name="Test_block" parent="." unique_id=352697471 instance=ExtResource("2_8a8pi")]

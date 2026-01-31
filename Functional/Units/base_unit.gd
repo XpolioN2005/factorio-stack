@@ -21,7 +21,7 @@ var build_faces: int = BuildFace.TOP | BuildFace.NORTH | BuildFace.SOUTH | Build
 var inventory: Dictionary[int, Dictionary] = {}
 
 @export var process_interval: float = 1.0
-@export var process_timer: float = 0.0
+var _process_timer: float = 0.0
 
 # Neighbors: BuildFace -> BaseUnit
 var neighbors: Dictionary[int, BaseUnit] = {}
@@ -124,6 +124,8 @@ func update_neighbors() -> void:
 		else:
 			if neighbors.has(face):
 				neighbors.erase(face)
+		
+	print(neighbors)
 
 func set_neighbor(face: int, unit: BaseUnit) -> void:
 	neighbors[face] = unit
@@ -132,9 +134,9 @@ func set_neighbor(face: int, unit: BaseUnit) -> void:
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-	process_timer += delta
-	if process_timer >= process_interval:
-		process_timer = 0.0
+	_process_timer += delta
+	if _process_timer >= process_interval:
+		_process_timer = 0.0
 		process_tick()
 
 func process_tick() -> void:

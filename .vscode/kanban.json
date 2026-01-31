@@ -44,7 +44,7 @@
             "title": "Doing",
             "tasks": [
                 {
-                    "text": "🔴 Implement vertical 3D grid \n- snapping\n- unit placement \n- unit removal",
+                    "text": "🔴 Implement vertical 3D grid  \n(more like voxel with var size )\n- ~~snapping~~\n- ~~unit placement~~\n- unit removal",
                     "id": "c4z1bnqtq9lwvm2njcxymtte"
                 }
             ],
@@ -71,5 +71,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1769782236936
+    "timestamp": 1769874617567
 }
