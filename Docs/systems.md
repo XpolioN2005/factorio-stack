@@ -20,3 +20,5 @@ Signals:
 Key scripts:
 
 - camera_controller.gd
+
+# Grid palcement

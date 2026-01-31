@@ -5,3 +5,10 @@ enum CameraMode {
 	MOVE_Y,
 	ROTATE
 }
+
+enum GameState {
+	EDIT_MODE,
+	SIMULATE_MODE
+}
+
+var peak: int 

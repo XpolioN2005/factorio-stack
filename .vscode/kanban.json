@@ -9,6 +9,10 @@
                     "id": "y41c4m9ole7ih62zisan2x47"
                 },
                 {
+                    "text": "🟠 Game play state\n - Edit mode\n - Simulate mode\n ",
+                    "id": "l6he4coisjau5iy9163umt95"
+                },
+                {
                     "text": "🟠 Implement save/load system for tower state\n",
                     "id": "fhj9xjpcub3xehhan26emmc2"
                 },
@@ -67,5 +71,5 @@
     ],
     "autosave": true,
     "saveToFile": true,
-    "timestamp": 1769755107205
+    "timestamp": 1769782236936
 }
