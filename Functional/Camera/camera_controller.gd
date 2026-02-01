@@ -3,9 +3,10 @@ extends Node3D
 
 #* Camera controller also handles input since the input is depended on camera anyways
 
-# Root -> Anchore -> MainCamera
-@onready var anchore: Node3D = $Anchore
-@onready var mainCamera: Camera3D = $Anchore/MainCamera
+# Root -> Anchor_pos(pan) -> Anchor_rot(Rotation) -> MainCamera(zoom)
+@onready var anchor_pos: Node3D = $AnchorePos
+@onready var anchor_rot: Node3D = $AnchorePos/AnchoreRot
+@onready var mainCamera: Camera3D = $AnchorePos/AnchoreRot/MainCamera
 
 # -------- CONFIG --------
 
@@ -51,9 +52,9 @@ const DRAG_THRESHOLD: float = 10.0
 # -------- SETUP --------
 
 func _ready() -> void:
-	target_pos = anchore.position
-	target_rot_x = anchore.rotation.x
-	target_rot_y = anchore.rotation.y
+	target_pos = anchor_pos.position
+	target_rot_x = anchor_rot.rotation.x
+	target_rot_y = anchor_rot.rotation.y
 	target_zoom = mainCamera.position.z
 
 	SignalManeger.request_camera_mode.connect(_on_request_camera_mode)
@@ -132,8 +133,9 @@ func _apply_camera_drag(delta: Vector2) -> void:
 			if not can_pan:
 				return
 
-			var right: Vector3 = anchore.global_transform.basis.x
-			var forward: Vector3 = -anchore.global_transform.basis.z
+			# Use camera rotation for pan direction so movement stays relative to view, not world axes
+			var right: Vector3 = anchor_rot.global_transform.basis.x
+			var forward: Vector3 = -anchor_rot.global_transform.basis.z
 			target_pos += (right * delta.x + forward * delta.y) * pan_speed
 
 		GameManeger.CameraMode.MOVE_Y:
@@ -170,10 +172,10 @@ func _raycast_from_camera(mouse_pos: Vector2, max_distance: float = 1000.0, coll
 # -------- UPDATE --------
 
 func _process(_delta: float) -> void:
-	anchore.position = anchore.position.lerp(target_pos, pan_smooth)
+	anchor_pos.position = anchor_pos.position.lerp(target_pos, pan_smooth)
 
-	anchore.rotation.x = lerp(anchore.rotation.x, target_rot_x, rotate_smooth)
-	anchore.rotation.y = lerp_angle(anchore.rotation.y, target_rot_y, rotate_smooth)
+	anchor_rot.rotation.x = lerp(anchor_rot.rotation.x, target_rot_x, rotate_smooth)
+	anchor_rot.rotation.y = lerp_angle(anchor_rot.rotation.y, target_rot_y, rotate_smooth)
 
 
 	target_zoom = clamp(target_zoom, min_zoom, max_zoom)

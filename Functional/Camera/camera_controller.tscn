@@ -5,7 +5,9 @@
 [node name="CameraController" type="Node3D" unique_id=1929181841]
 script = ExtResource("1_ntwkr")
 
-[node name="Anchore" type="Node3D" parent="." unique_id=626341469]
+[node name="AnchorePos" type="Node3D" parent="." unique_id=1368835123]
 
-[node name="MainCamera" type="Camera3D" parent="Anchore" unique_id=934355629]
+[node name="AnchoreRot" type="Node3D" parent="AnchorePos" unique_id=626341469]
+
+[node name="MainCamera" type="Camera3D" parent="AnchorePos/AnchoreRot" unique_id=934355629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7788708)
