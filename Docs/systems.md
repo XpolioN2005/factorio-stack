@@ -50,7 +50,7 @@ Render quality of GIFs is set to low to keep repo size in check.
 
 **Key scripts:**
 
-- `game_maneger.gd` — handles placement, removal, neighbor linking, grid mapping
+- `grid_system.gd` — handles placement, removal, neighbor linking, grid mapping
 - `base_unit.gd` — defines unit size, build faces, neighbors, inventory, and processing logic
 
 ---

@@ -8,6 +8,7 @@
 
 [node name="Test_block" type="StaticBody3D" unique_id=352697471]
 script = ExtResource("1_tjoys")
+unit_type = "TestUnit"
 inv_size = 1
 metadata/_custom_type_script = "uid://dleehp3tvvgvy"
 

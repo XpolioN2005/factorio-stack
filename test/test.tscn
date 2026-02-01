@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6ffyfeuev41v" path="res://Functional/Camera/camera_controller.tscn" id="1_syuel"]
 [ext_resource type="PackedScene" uid="uid://bqga4f1bxs35" path="res://test/test_block.tscn" id="2_8a8pi"]
+[ext_resource type="PackedScene" uid="uid://cthkdwiih1d2s" path="res://Functional/grid_system.tscn" id="3_65205"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8a8pi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -29,3 +30,5 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Test_block" parent="." unique_id=352697471 instance=ExtResource("2_8a8pi")]
+
+[node name="GridSystem" parent="." unique_id=866490501 instance=ExtResource("3_65205")]
